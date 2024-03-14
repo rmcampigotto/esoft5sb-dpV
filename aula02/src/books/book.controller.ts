@@ -13,7 +13,7 @@ class BookController {
 
     async findById(req: Request, res: Response) {
         try {
-            const book = await bookService.findById(req.params)
+            const book = await bookService.findById(req.params.id)
             return res.json(book)
         } catch (error) {
             return error
@@ -31,7 +31,7 @@ class BookController {
 
     async update(req: Request, res: Response) {
         try {
-            const book = await bookService.update(req.params, req.body)
+            const book = await bookService.update(req.params.id, req.body)
             return res.json(book)
         } catch (error) {
             return error
@@ -40,8 +40,8 @@ class BookController {
 
     async delete(req: Request, res: Response) {
         try {
-            await bookService.delete(req.params)
-            return res
+            const book = await bookService.delete(req.params.id)
+            return res.json(book)
         } catch (error) {
             return error
         }
