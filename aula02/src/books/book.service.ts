@@ -22,7 +22,7 @@ export class BookService {
     }
 
     async delete(id: any) {
-        return await bookModel.deleteOne(id)
+        return await bookModel.findByIdAndDelete(id)
     }
 }
 
