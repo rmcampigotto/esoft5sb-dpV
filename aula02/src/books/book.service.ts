@@ -1,10 +1,7 @@
 import mongoose from 'mongoose'
 import bookModel from './book.schema'
 
-export class BookService {
-    static update: any
-    static delete: any
-
+class BookService {
     async create(book: any) {
         return await bookModel.create(book)
     }
