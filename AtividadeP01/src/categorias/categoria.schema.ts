@@ -2,11 +2,10 @@ import { Schema, model } from 'mongoose'
 import { cores } from './enum/cores.enum.ts'
 
 const categoriaSchema = new Schema({
-    id: Number,
+    ID: Number,
     nome: String,
     cor: cores
 },{
-    _id: false,
     timestamps: true
 })
 
