@@ -1,11 +1,11 @@
 import { Schema, model } from 'mongoose'
-import { cores } from './enum/cores.enum.ts'
+import cores from './enum/cores.enum'
 
 const categoriaSchema = new Schema({
     ID: Number,
     nome: String,
-    cor: cores
-},{
+    cor: { type: String, cores }
+}, {
     timestamps: true
 })
 

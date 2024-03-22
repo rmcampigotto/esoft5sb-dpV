@@ -1,12 +1,20 @@
 import { Request, Response } from "express"
 import categoriaService from './categoria.service'
+import cores from "./enum/cores.enum"
+
+let cores_array = new Array
+cores_array = Object.values(cores)
 
 class CategoriaController {
 
     async create(req: Request, res: Response) {
         try {
-            const categoria = await categoriaService.create(req.body)
-            return res.json(categoria)
+            if (cores_array.includes(req.body.cor)) {
+                const categoria = await categoriaService.create(req.body)
+                return res.json(categoria)
+            } else {
+                return res.json('Cor não existente!')
+            }
         } catch (error) {
             return error
         }

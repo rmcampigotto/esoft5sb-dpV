@@ -1,9 +1,7 @@
 enum cores {
-    RED = 'red',
-    YELLOW = 'Amarelo',
-    GREEN = 'Verde'
-}
+    Vermelho,
+    Amarelo,
+    Verde
+};
 
-export{
-    cores
-}
+export default cores
