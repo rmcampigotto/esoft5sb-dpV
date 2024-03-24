@@ -17,7 +17,6 @@ routes.post('/createUsuario', usuarioController.create)
 routes.put('/updateUsuario/:id', usuarioController.update)
 routes.delete('/deleteUsuario/:id', usuarioController.delete)
 
-// Tarefas
 routes.get('/findAllTarefa', tarefaController.findAll)
 routes.get('/findByIdTarefa/:id', tarefaController.findById)
 routes.post('/createTarefa', tarefaController.create)
