@@ -53,7 +53,7 @@ class UsuarioController {
         let password = req.params.password
         try {
             const usuario = await usuarioService.findLogin(user)
-            if (usuario?.senha == password) {
+            if (usuario?.senha === password) {
                 return res.json('LOGIN REALIZADO COM SUCESSO!')
             } else {
                 return res.json('USUARIO OU SENHA INCORRETOS')
