@@ -1,7 +1,7 @@
 enum tarefa_status {
     pendente,
     em_andamento,
-    concluída
+    concluida
 }
 
 export default tarefa_status

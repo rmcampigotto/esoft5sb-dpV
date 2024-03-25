@@ -22,6 +22,10 @@ class UsuarioService {
         return await usuarioModel.findByIdAndDelete(id)
     }
 
+    async findLogin(user: String) {
+        return await usuarioModel.findOne({ username: user })
+    }
+
 }
 
 export default new UsuarioService()

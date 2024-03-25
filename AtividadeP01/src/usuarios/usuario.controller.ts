@@ -23,7 +23,7 @@ class UsuarioController {
 
     async findById(req: Request, res: Response) {
         try {
-            const returnById = await usuarioService.findById(req.params.id)
+            const returnById = await usuarioService.findById(req.params._id)
             return res.json(returnById)
         } catch (error) {
             return error
@@ -32,7 +32,7 @@ class UsuarioController {
 
     async update(req: Request, res: Response) {
         try {
-            const usuario = await usuarioService.update(req.params.id, req.body)
+            const usuario = await usuarioService.update(req.params._id, req.body)
             return res.json(usuario)
         } catch (error) {
             return error
@@ -41,8 +41,23 @@ class UsuarioController {
 
     async delete(req: Request, res: Response) {
         try {
-            const usuarioRemove = await usuarioService.delete(req.params.id)
+            const usuarioRemove = await usuarioService.delete(req.params._id)
             return res.json(usuarioRemove)
+        } catch (error) {
+            return error
+        }
+    }
+
+    async login(req: Request, res: Response) {
+        let user = req.params.user
+        let password = req.params.password
+        try {
+            const usuario = await usuarioService.findLogin(user)
+            if (usuario?.senha == password) {
+                return res.json('LOGIN REALIZADO COM SUCESSO!')
+            } else {
+                return res.json('USUARIO OU SENHA INCORRETOS')
+            }
         } catch (error) {
             return error
         }

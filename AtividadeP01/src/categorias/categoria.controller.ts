@@ -31,7 +31,7 @@ class CategoriaController {
 
     async findById(req: Request, res: Response) {
         try {
-            const returnById = await categoriaService.findById(req.params.id)
+            const returnById = await categoriaService.findById(req.params._id)
             return res.json(returnById)
         } catch (error) {
             return error
@@ -40,7 +40,7 @@ class CategoriaController {
 
     async update(req: Request, res: Response) {
         try {
-            const categoria = await categoriaService.update(req.params.id, req.body)
+            const categoria = await categoriaService.update(req.params._id, req.body)
             return res.json(categoria)
         } catch (error) {
             return error
@@ -49,7 +49,7 @@ class CategoriaController {
 
     async delete(req: Request, res: Response) {
         try {
-            const categoriaRemove = await categoriaService.delete(req.params.id)
+            const categoriaRemove = await categoriaService.delete(req.params._id)
             return res.json(categoriaRemove)
         } catch (error) {
             return error
