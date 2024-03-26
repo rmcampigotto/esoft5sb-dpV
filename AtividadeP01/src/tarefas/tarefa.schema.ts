@@ -1,16 +1,20 @@
-import { Schema, model } from 'mongoose'
+import mongoose, { Schema, model } from 'mongoose'
 import tarefa_status from './enums/status.enum'
 
+const AutoIncrement = require('mongoose-sequence')
+
 const tarefaSchema = new Schema({
-    ID: Number,
+    tarefaID: Number,
     titulo: String,
     descri: String,
     data_criacao: String,
     tipo: String,
-    categoria_ID: Number,
+    categoriaID: Number,
     status: { type: String, tarefa_status }
 }, {
     timestamps: true
 })
+
+tarefaSchema.plugin(AutoIncrement(mongoose), { inc_field: 'tarefaID' })
 
 export default model('Tarefas', tarefaSchema)

@@ -9,12 +9,11 @@ class CategoriaController {
 
     async create(req: Request, res: Response) {
         try {
-            if (cores_array.includes(req.body.cor)) {
-                const categoria = await categoriaService.create(req.body)
-                return res.json(categoria)
-            } else {
+            if (!cores_array.includes(req.body.cor)) {
                 return res.json('Cor não existente!')
             }
+            const categoria = await categoriaService.create(req.body)
+            return res.json(categoria)
         } catch (error) {
             return error
         }

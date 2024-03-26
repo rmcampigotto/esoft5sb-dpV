@@ -9,12 +9,11 @@ class TarefaController {
 
     async create(req: Request, res: Response) {
         try {
-            if (status_array.includes(req.body.status)) {
-                const tarefa = await tarefaService.create(req.body)
-                return res.json(tarefa)
-            } else {
+            if (!status_array.includes(req.body.status)) {
                 return res.json("Status não existe")
             }
+            const tarefa = await tarefaService.create(req.body)
+            return res.json(tarefa)
         } catch (error) {
             return error
         }

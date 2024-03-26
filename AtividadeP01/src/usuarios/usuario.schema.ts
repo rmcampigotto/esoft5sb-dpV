@@ -1,7 +1,9 @@
-import { Schema, model } from "mongoose";
+import mongoose, { Schema, model } from "mongoose";
+
+const AutoIncrement = require('mongoose-sequence')
 
 const usuarioSchema = new Schema({
-    ID: Number,
+    usuarioID: Number,
     username: String,
     peso: Number,
     senha: String,
@@ -9,5 +11,7 @@ const usuarioSchema = new Schema({
 }, {
     timestamps: true
 })
+
+usuarioSchema.plugin(AutoIncrement(mongoose), { inc_field: 'usuarioID' })
 
 export default model('Usuario', usuarioSchema)
