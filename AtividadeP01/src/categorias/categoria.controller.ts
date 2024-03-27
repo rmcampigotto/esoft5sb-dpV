@@ -55,6 +55,15 @@ class CategoriaController {
         }
     }
 
+    async findCustomId(req: Request, res: Response) {
+        try {
+            const categoria = await categoriaService.findCustomID(req.params.ID)
+            return res.json(categoria)
+        } catch (error) {
+            return error
+        }
+    }
+
 }
 
 export default new CategoriaController()

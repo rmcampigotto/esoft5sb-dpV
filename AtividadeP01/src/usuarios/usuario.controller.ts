@@ -53,11 +53,21 @@ class UsuarioController {
         let password = req.params.password
         try {
             const usuario = await usuarioService.findLogin(user)
+            //@ts-ignore
             if (usuario?.senha === password) {
                 return res.json('LOGIN REALIZADO COM SUCESSO!')
             } else {
                 return res.json('USUARIO OU SENHA INCORRETOS')
             }
+        } catch (error) {
+            return error
+        }
+    }
+
+    async findCustomId(req: Request, res: Response) {
+        try {
+            const usuario = await usuarioService.findCustomId(req.params.ID)
+            return res.json(usuario)
         } catch (error) {
             return error
         }

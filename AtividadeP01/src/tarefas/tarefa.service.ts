@@ -21,6 +21,14 @@ class TarefaService {
     async delete(id: any) {
         return await tarefaModel.findByIdAndDelete(id)
     }
+
+    async findCustomId(ID: any) {
+        return await tarefaModel.find({ tarefaID: ID })
+    }
+
+    async findUsuarioId(userID: any) {
+        return await tarefaModel.find({ usuarioID: userID })
+    }
 }
 
 export default new TarefaService()

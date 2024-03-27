@@ -26,6 +26,10 @@ class UsuarioService {
         return await usuarioModel.findOne({ username: user })
     }
 
+    async findCustomId(ID: any) {
+        return await usuarioModel.find({ usuarioID: ID })
+    }
+
 }
 
 export default new UsuarioService()

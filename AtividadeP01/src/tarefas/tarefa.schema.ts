@@ -10,6 +10,7 @@ const tarefaSchema = new Schema({
     data_criacao: String,
     tipo: String,
     categoriaID: Number,
+    usuarioID: Number,
     status: { type: String, tarefa_status }
 }, {
     timestamps: true

@@ -21,6 +21,10 @@ class CategoriaService {
     async delete(id: any) {
         return await categoriaModel.findByIdAndDelete(id)
     }
+
+    async findCustomID(ID: any) {
+        return await categoriaModel.findOne({ categoriaID: ID })
+    }
 }
 
 export default new CategoriaService()

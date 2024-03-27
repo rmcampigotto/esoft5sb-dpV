@@ -55,6 +55,24 @@ class TarefaController {
         }
     }
 
+    async findCustomId(req: Request, res: Response) {
+        try {
+            const tarefa = await tarefaService.findCustomId(req.params.ID)
+            return res.json(tarefa)
+        } catch (error) {
+            return error
+        }
+    }
+
+    async findUsuarioId(req: Request, res: Response) {
+        try {
+            const usuarioTarefas = await tarefaService.findUsuarioId(req.params.userID)
+            return res.json(usuarioTarefas)
+        } catch (error) {
+            return error
+        }
+    }
+
 }
 
 export default new TarefaController()
