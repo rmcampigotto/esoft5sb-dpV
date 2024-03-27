@@ -73,6 +73,25 @@ class TarefaController {
         }
     }
 
+    async findConcluidas(req: Request, res: Response) {
+        try {
+            const tarefaConcluidas = await tarefaService.findConcluidas()
+            return res.json(tarefaConcluidas)
+        } catch (error) {
+            return error
+        }
+    }
+
+    async findPendentes(req: Request, res: Response) {
+        try {
+            const tarefaPendentes = await tarefaService.findPendentes()
+            return res.json(tarefaPendentes)
+        } catch (error) {
+            return error
+        }
+    }
+
+
 }
 
 export default new TarefaController()

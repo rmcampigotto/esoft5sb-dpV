@@ -27,6 +27,8 @@ routes.put('/updateTarefa/:_id', tarefaController.update)
 routes.delete('/deleteTarefa/:_id', tarefaController.delete)
 routes.get('/findCustomIdTarefa/:ID', tarefaController.findCustomId)
 routes.get('/findTarefasUsuario/:userID', tarefaController.findUsuarioId)
+routes.get('/findTarefasConcluidas', tarefaController.findConcluidas)
+routes.get('/findTarefasPendentes', tarefaController.findPendentes)
 
 export {
     routes

@@ -9,7 +9,7 @@ const tarefaSchema = new Schema({
     descri: String,
     data_criacao: String,
     tipo: String,
-    categoriaID: Number,
+    categoria: String,
     usuarioID: Number,
     status: { type: String, tarefa_status }
 }, {

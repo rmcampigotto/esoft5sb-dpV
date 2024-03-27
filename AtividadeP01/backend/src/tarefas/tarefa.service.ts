@@ -28,6 +28,14 @@ class TarefaService {
     async findUsuarioId(userID: any) {
         return await tarefaModel.find({ usuarioID: userID })
     }
+
+    async findConcluidas() {
+        return await tarefaModel.find({ status: 'concluida' })
+    }
+
+    async findPendentes() {
+        return await tarefaModel.find({ status: 'pendente' })
+    }
 }
 
 export default new TarefaService()
