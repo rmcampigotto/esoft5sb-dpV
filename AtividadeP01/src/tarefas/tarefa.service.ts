@@ -1,4 +1,3 @@
-import mongoose from 'mongoose'
 import tarefaModel from './tarefa.schema'
 
 class TarefaService {
