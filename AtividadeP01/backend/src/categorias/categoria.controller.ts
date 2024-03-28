@@ -58,6 +58,11 @@ class CategoriaController {
     async findCustomId(req: Request, res: Response) {
         try {
             const categoria = await categoriaService.findCustomID(req.params.ID)
+
+            if (categoria == null) {
+                return res.json('categoriaID NÀO ENCONTRADO!')
+            }
+
             return res.json(categoria)
         } catch (error) {
             return error

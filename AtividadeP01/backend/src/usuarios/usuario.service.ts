@@ -27,7 +27,7 @@ class UsuarioService {
     }
 
     async findCustomId(ID: any) {
-        return await usuarioModel.find({ usuarioID: ID })
+        return await usuarioModel.findOne({ usuarioID: ID })
     }
 
 }

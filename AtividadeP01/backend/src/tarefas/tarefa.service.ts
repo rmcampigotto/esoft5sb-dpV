@@ -22,7 +22,7 @@ class TarefaService {
     }
 
     async findCustomId(ID: any) {
-        return await tarefaModel.find({ tarefaID: ID })
+        return await tarefaModel.findOne({ tarefaID: ID })
     }
 
     async findUsuarioId(userID: any) {

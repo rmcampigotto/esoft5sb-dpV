@@ -58,6 +58,11 @@ class TarefaController {
     async findCustomId(req: Request, res: Response) {
         try {
             const tarefa = await tarefaService.findCustomId(req.params.ID)
+
+            if (tarefa == null) {
+                return res.json('tarefaID NÃO ENCONTRADO!')
+            }
+
             return res.json(tarefa)
         } catch (error) {
             return error
