@@ -5,13 +5,13 @@ const AutoIncrement = require('mongoose-sequence')
 
 const tarefaSchema = new Schema({
     tarefaID: Number,
-    titulo: String,
-    descri: String,
-    data_criacao: String,
-    tipo: String,
-    categoria: String,
-    usuarioID: Number,
-    status: { type: String, tarefa_status }
+    titulo: { type: String, required: true },
+    descri: { type: String, requires: true },
+    data_criacao: { type: Date, required: true },
+    tipo: { type: String, required: true },
+    categoria: { type: String, required: true },
+    usuarioID: { type: Number, required: true },
+    status: { type: String, tarefa_status, required: true }
 }, {
     timestamps: true
 })

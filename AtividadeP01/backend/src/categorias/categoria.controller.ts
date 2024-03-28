@@ -10,48 +10,48 @@ class CategoriaController {
     async create(req: Request, res: Response) {
         try {
             if (!cores_array.includes(req.body.cor)) {
-                return res.json('Cor não existente!')
+                return res.status(204).json('Cor não existente!')
             }
             const categoria = await categoriaService.create(req.body)
-            return res.json(categoria)
+            return res.status(200).json(categoria)
         } catch (error) {
-            return error
+            return res.status(400).json(error)
         }
     }
 
     async findAll(req: Request, res: Response) {
         try {
             const returnAll = await categoriaService.findAll()
-            return res.json(returnAll)
+            return res.status(200).json(returnAll)
         } catch (error) {
-            return error
+            return res.status(400).json(error)
         }
     }
 
     async findById(req: Request, res: Response) {
         try {
             const returnById = await categoriaService.findById(req.params._id)
-            return res.json(returnById)
+            return res.status(200).json(returnById)
         } catch (error) {
-            return error
+            return res.status(400).json(error)
         }
     }
 
     async update(req: Request, res: Response) {
         try {
             const categoria = await categoriaService.update(req.params._id, req.body)
-            return res.json(categoria)
+            return res.status(200).json(categoria)
         } catch (error) {
-            return error
+            return res.status(400).json(error)
         }
     }
 
     async delete(req: Request, res: Response) {
         try {
             const categoriaRemove = await categoriaService.delete(req.params._id)
-            return res.json(categoriaRemove)
+            return res.status(200).json(categoriaRemove)
         } catch (error) {
-            return error
+            return res.status(400).json(error)
         }
     }
 
@@ -60,12 +60,12 @@ class CategoriaController {
             const categoria = await categoriaService.findCustomID(req.params.ID)
 
             if (categoria == null) {
-                return res.json('categoriaID NÀO ENCONTRADO!')
+                return res.status(204).json('categoriaID NÀO ENCONTRADO!')
             }
 
-            return res.json(categoria)
+            return res.status(200).json(categoria)
         } catch (error) {
-            return error
+            return res.status(400).json(error)
         }
     }
 

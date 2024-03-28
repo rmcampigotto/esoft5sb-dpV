@@ -5,8 +5,8 @@ const AutoIncrement = require('mongoose-sequence')
 
 const categoriaSchema = new Schema({
     categoriaID: Number,
-    nome: String,
-    cor: { type: String, cores }
+    nome: { type: String, required: true },
+    cor: { type: String, cores, required: true }
 }, {
     timestamps: true
 })

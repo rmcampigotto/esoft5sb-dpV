@@ -4,10 +4,10 @@ const AutoIncrement = require('mongoose-sequence')
 
 const usuarioSchema = new Schema({
     usuarioID: Number,
-    username: String,
-    peso: Number,
-    senha: String,
-    email: String
+    username: { type: String, required: true },
+    peso: { type: Number, required: true },
+    senha: { type: String, required: true },
+    email: { type: String, required: true }
 }, {
     timestamps: true
 })
