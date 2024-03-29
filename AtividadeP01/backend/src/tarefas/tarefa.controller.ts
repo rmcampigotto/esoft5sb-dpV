@@ -1,7 +1,6 @@
 import { Request, Response } from "express"
 import tarefaService from "./tarefa.service"
 import tarefa_status from "./enums/status.enum"
-import usuarioService from "../usuarios/usuario.service"
 
 let status_array = new Array
 status_array = Object.values(tarefa_status)
