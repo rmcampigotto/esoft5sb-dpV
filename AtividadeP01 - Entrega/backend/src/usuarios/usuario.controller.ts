@@ -54,6 +54,7 @@ class UsuarioController {
         try {
             const usuario = await usuarioService.findLogin(user)
             // utilizar JWT para validar
+            // @ts-ignore
             if (usuario?.senha === password) {
                 return res.json('LOGIN REALIZADO COM SUCESSO!')
             } else {
