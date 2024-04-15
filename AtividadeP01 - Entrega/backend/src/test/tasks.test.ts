@@ -32,7 +32,7 @@ describe('/categoria endpoint', () => {
 
     it.skip('Deve alterar uma categoria no banco de dados', async () => {
         const categoriaMock = {
-            _id: '661ab7d90f631620e1988271',
+            _id: '661ab7d90f631620e1988271', // aqui tem que pegar um _id no banco para conseguir testar corretamente
             nome: 'Categoria Teste',
             cor: 'Verde'
         }
@@ -80,7 +80,7 @@ describe('/usuario endpoint', () => {
 
     it.skip('Deve alterar um usuario no banco de dados', async () => {
         const usaurioMock = {
-            _id: '661abe7135a533c94c83a79c',
+            _id: '661abe7135a533c94c83a79c', // aqui tem que pegar um _id no banco para conseguir testar corretamente
             username: 'Usuario Teste',
             peso: 56.3,
             email: 'teste@email.com',
@@ -146,7 +146,7 @@ describe('/tarefa endpoint', () => {
 
     it.skip('Deve alterar uma tarfea no banco de dados', async () => {
         const tarefaMock = {
-            _id: '',
+            _id: '', // aqui tem que pegar um _id no banco para conseguir testar corretamente
             titulo: 'Tarefa Teste',
             descri: 'Testando as rotas de tarefa',
             data_criacao: Date.now(),
@@ -159,6 +159,18 @@ describe('/tarefa endpoint', () => {
         const updateTarefa = await tarefaModel.findByIdAndUpdate(tarefaMock._id, tarefaMock)
         const response = await tarefaModel.findById(tarefaMock._id)
 
+        //@ts-ignore
+        expect(updateTarefa.titulo).toBe(response.titulo)
+        //@ts-ignore
+        expect(updateTarefa.descri).toBe(response.descri)
+        //@ts-ignore
+        expect(updateTarefa.tipo).toBe(response.tipo)
+        //@ts-ignore
+        expect(updateTarefa.categoria).toBe(response.categoria)
+        //@ts-ignore
+        expect(updateTarefa.usuarioID).toBe(response.usuarioID)
+        //@ts-ignore
+        expect(updateTarefa.status).toBe(response.status)
     })
 
 })
