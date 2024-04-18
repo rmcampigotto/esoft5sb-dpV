@@ -1,5 +1,5 @@
 {
-  "name": "avaliacao",
+  "name": "back",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,6 @@
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.21",
-    "@types/mongoose": "^5.11.97",
     "@types/node": "^20.12.7",
     "ts-node": "^10.9.2",
     "tsx": "^4.7.2",
@@ -19,7 +18,8 @@
   },
   "dependencies": {
     "axios": "^1.6.8",
+    "cors": "^2.8.5",
     "express": "^4.19.2",
-    "mongoose": "^8.3.1"
+    "mongoose": "^8.3.2"
   }
 }
