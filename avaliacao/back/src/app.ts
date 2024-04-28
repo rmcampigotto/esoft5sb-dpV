@@ -1,6 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import { routes } from './routes'
+import cors from 'cors'
 
 class App {
     public express: express.Application
@@ -14,6 +15,9 @@ class App {
 
     private middleware(): void {
         this.express.use(express.json())
+        this.express.use(cors({
+            origin: ['http://localhost:3001', 'http://127.0.0.1:3001']
+        }));
     }
 
     private async database() {
