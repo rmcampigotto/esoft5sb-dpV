@@ -6,8 +6,16 @@
 
 ## Entidades:
 
--> Não foi criada nenhuma entidade, estamos na fase inicial e testando as funcionalidades e informações que conseguimos recuperar
+-> CHARACTER | Criada | Em Desenvolvimento
+-> COMIC | Não Criada |
+-> CREATORS | Não Criada |
 
 ## Etapa do desenvolvimento:
 
--> Fase incial | Testando o Axios e alguma rotas
+-> No commit do dia 29/04/2024 - Implementei o CRUD para a entidade de CHARACTER, junto com a função para armazenar o nome, descrição e link da imagem para cada um | Fiz somente para a saga Spider-Verse (2014 - 2015) no momento
+
+## OBS:
+
+-> No arquivo character.controller.ts | linha 25 e 26:
+    - Na hora de passar a url para o object que criei, não estava aceitando por conta do StingConstructor, mas adicionando o // @ts-ignore foi possível seguir sem problemas
+    - A string que adicionei (/standard_fantastic.jpg) na url que vem da API da Marvel serve para carregar a imagem corretamente, visto que sem ela o link apenas retorna Not Found
