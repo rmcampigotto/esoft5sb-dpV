@@ -6,13 +6,13 @@
 
 ## Entidades:
 
--> CHARACTER | Criada | Em Desenvolvimento<br/>
+-> CHARACTER | Criada | Finalizada (Aberto para ajustes)<br/>
 -> COMIC | Não Criada |<br/>
 -> CREATORS | Não Criada |<br/>
 
 ## Etapa do desenvolvimento:
 
--> No commit do dia 29/04/2024 - Implementei o CRUD para a entidade de CHARACTER, junto com a função para armazenar o nome, descrição e link da imagem para cada um | Fiz somente para a saga Spider-Verse (2014 - 2015) no momento
+-> No commit do dia 30/04/2024 - Finalizei a entidade CHARACTER (Até o momento, finalizei as funções que precisamos para montar o site)
 
 ## OBS:
 
